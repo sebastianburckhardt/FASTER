@@ -813,6 +813,8 @@ namespace FASTER.core
                 _clientSession = clientSession;
             }
 
+            public ITraceListener<Key> TraceListener => (this._clientSession.functions as ITraceListener<Key>);
+
             #region IFunctions - Optional features supported
             public bool DisableLocking => _clientSession.fht.DisableLocking;
 

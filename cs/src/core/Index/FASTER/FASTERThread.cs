@@ -317,7 +317,9 @@ namespace FASTER.core
             // Issue the continue command
             if (pendingContext.type == OperationType.READ)
             {
+                fasterSession.TraceListener?.Trace(key, "ICPD");
                 internalStatus = InternalContinuePendingRead(opCtx, request, ref pendingContext, fasterSession, currentCtx);
+                fasterSession.TraceListener?.Trace(key, $"->{internalStatus}");
             }
             else
             {

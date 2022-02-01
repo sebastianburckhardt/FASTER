@@ -278,4 +278,16 @@ namespace FASTER.core
     public interface IFunctions<Key, Value, Context> : IFunctions<Key, Value, Value, Value, Context>
     {
     }
+
+    /// <summary>
+    /// HACK callback for tracing
+    /// </summary>
+    public interface ITraceListener<Key>
+    {
+        /// <summary>
+        /// Trace a message
+        /// </summary>
+        /// <param name="message"></param>
+        void Trace(Key key, string message);
+    }
 }

@@ -79,5 +79,7 @@ namespace FASTER.core
         bool CompletePendingWithOutputs(out CompletedOutputIterator<Key, Value, Input, Output, Context> completedOutputs, bool wait = false, bool spinWaitForCommit = false);
 
         IHeapContainer<Input> GetHeapContainer(ref Input input);
+
+        ITraceListener<Key> TraceListener { get; }
     }
 }

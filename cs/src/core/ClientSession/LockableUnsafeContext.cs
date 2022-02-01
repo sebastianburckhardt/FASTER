@@ -492,6 +492,9 @@ namespace FASTER.core
             public bool DisableLocking => true;       // We only lock explicitly in Lock/Unlock, which are longer-duration locks.
 
             public bool IsManualLocking => true;
+
+            public ITraceListener<Key> TraceListener => (this._clientSession.functions as ITraceListener<Key>);
+
             #endregion IFunctions - Optional features supported
 
             #region IFunctions - Reads
